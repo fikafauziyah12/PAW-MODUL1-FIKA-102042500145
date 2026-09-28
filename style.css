@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Komponen Navbar/Header */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(202, 7, 173, 0.692);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #0f172a;
+}
+
+/* Komponen Hero (Bagian Pembuka) */
+.hero {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.hero-banner {
+    background-color: rgba(202, 7, 82, 0.66);;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 60px 40px;
+    text-align: left;
+}
+
+.hero-banner p.sub {
+    color: #94a3b8;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.hero-banner h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-banner p.desc {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    max-width: 600px;
+}
+
+.hero-banner .btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.hero-banner .btn-hero:hover {
+    background-color: #e2e8f0;
+}
+
+/* Komponen Informasi Jumlah Produk & Judul Katalog */
+.katalog-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.katalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.katalog-header h2 {
+    font-size: 24px;
+    color: #0f172a;
+}
+
+.katalog-header .total-info {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* CSS Grid untuk susunan susunan card produk secara otomatis */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Setiap produk ditampilkan dalam bentuk card */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(202, 7, 82, 0.66);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #e2e8f0;
+}
+
+.card-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+/* Challenge: Promo / Diskon Badge */
+.diskon-badge {
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 11px;
+    margin-left: 5px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.price-container {
+    margin-bottom: 15px;
+}
+
+.normal-price {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #94a3b8;
+    display: block;
+}
+
+.final-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.stock-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.stock-text {
+    color: #64748b;
+}
+
+/* Badge status stok */
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-tersedia {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.badge-habis {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Tombol Aksi */
+.btn-beli {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-beli:hover {
+    background-color: rgba(202, 7, 82, 0.66);;
+}
+
+/* Tombol dinonaktifkan jika stok habis */
+.btn-disabled {
+    background-color: #e2e8f0;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+.btn-disabled:hover {
+    background-color: #e2e8f0;
+}
+
+/* Komponen Footer */
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 14px;
+}
